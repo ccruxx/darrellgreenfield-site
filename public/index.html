@@ -4,120 +4,224 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Darrell Greenfield | AI Engineer & Technical Leader</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f7f9fb;
-      color: #111;
+    :root {
+      --primary: #4f46e5;
+      --accent: #6366f1;
+      --bg: #f8fafc;
+      --text: #111827;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 1rem 2rem;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
       text-align: center;
       padding: 80px 20px 40px;
       background: linear-gradient(to right, #6366f1, #8b5cf6);
       color: white;
     }
-    header h1 {
+
+    .hero h1 {
       font-size: 48px;
       margin-bottom: 10px;
     }
-    header p {
+
+    .hero p {
       font-size: 20px;
       margin: 0;
     }
+
     section {
       max-width: 960px;
-      margin: 40px auto;
+      margin: 60px auto;
       padding: 0 20px;
     }
+
     h2 {
-      color: #4f46e5;
-      margin-bottom: 10px;
+      font-size: 26px;
+      color: var(--primary);
+      margin-bottom: 16px;
     }
+
     ul {
       list-style: none;
       padding: 0;
     }
+
+    ul li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
     ul li::before {
       content: "✔️";
-      margin-right: 8px;
+      position: absolute;
+      left: 0;
       color: #10b981;
     }
-    .projects a {
-      display: inline-block;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #6366f1;
-      font-weight: 600;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
-    .footer {
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .social {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      font-size: 22px;
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    footer {
       text-align: center;
       padding: 40px 20px;
       font-size: 14px;
-      color: #777;
+      color: #6b7280;
     }
-    .social-icons a {
-      color: #4f46e5;
-      margin: 0 10px;
-      font-size: 20px;
+
+    a.resume-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Darrell Greenfield</h1>
-  <p>AI Builder • Cloud Systems Engineer • Technical Leader</p>
+  <div><strong>Darrell Greenfield</strong></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section>
+<div class="hero">
+  <h1>Darrell Greenfield</h1>
+  <p>AI Builder • Cloud Systems Engineer • Technical Leader</p>
+</div>
+
+<section id="about">
   <h2>About Me</h2>
   <p>
-    I’m a senior-level software and systems engineer with 14+ years of experience in defense, cloud infrastructure, and AI product development.
-    By day, I lead the THAAD training infrastructure team for KBR. By night, I build powerful AI-driven tools under my LLC, Trailblazer Ventures.
-    I specialize in leveraging AI and modern dev tools to prototype fast and deploy reliably.
+    I’m a systems and software engineer with 14+ years of experience in defense, cloud, and AI development. I lead the THAAD training infrastructure team at KBR and build AI products under my LLC, Trailblazer Ventures. I specialize in delivering clean, scalable tools using Replit, Visual Studio, and modern AI integrations.
   </p>
 </section>
 
-<section>
+<section id="skills">
   <h2>Core Skills</h2>
   <ul>
-    <li>AI & Automation (OpenAI, Gemini, GPT, Replit, Copilot)</li>
-    <li>Cloud & Virtualization (AWS, VMware, Cisco Networks)</li>
-    <li>Prototyping with HTML, JavaScript, C++, Python</li>
-    <li>Security+, Network+, A+ | Active Secret Clearance</li>
-    <li>Team Leadership & Operational Execution</li>
+    <li>AI & Automation (OpenAI, Gemini, GPT, Copilot)</li>
+    <li>Cloud Infrastructure (AWS, VMware, Cisco)</li>
+    <li>Full-stack Prototyping (HTML, JS, C++, Python)</li>
+    <li>Security+, Network+, A+ | Secret Clearance</li>
+    <li>Team Leadership & Ops Execution (KBR, SAIC, Lockheed)</li>
   </ul>
 </section>
 
-<section class="projects">
+<section id="projects">
   <h2>Projects</h2>
-  <a href="#">PagePilot – AI Landing Page Generator</a><br />
-  <a href="#">Obserra – Nervous System Reset AI Coach</a><br />
-  <a href="#">Trailblazer Internal AI Tools (Private)</a>
+  <div class="grid">
+    <div class="card">
+      <h3>PagePilot</h3>
+      <p>AI-powered landing page generator for ADHD solo founders & product builders. Auto-creates conversion-optimized pages with emotional targeting.</p>
+    </div>
+    <div class="card">
+      <h3>Obserra</h3>
+      <p>Nervous system reset AI coach designed to help creators shift from stress to clarity in under 3 minutes using AI-guided protocols.</p>
+    </div>
+    <div class="card">
+      <h3>Trailblazer Tools</h3>
+      <p>Internal suite of AI apps for automation, resume parsing, marketing insights, and trading system analysis. Private, in-house tools.</p>
+    </div>
+  </div>
 </section>
 
-<section>
+<section id="resume">
   <h2>Resume</h2>
   <p>
-    <a href="https://github.com/ccruxx/darrellgreenfield-site/raw/master/DarrellGreenfield-Resume.pdf" target="_blank">
-      Download Resume (PDF)
+    Download a full copy of my resume below:
+    <br />
+    <a class="resume-link" href="https://github.com/ccruxx/darrellgreenfield-site/raw/master/DarrellGreenfield-Resume.pdf" target="_blank">
+      📄 DarrellGreenfield-Resume.pdf
     </a>
   </p>
 </section>
 
-<section class="social-icons">
+<section id="contact">
   <h2>Connect</h2>
-  <a href="https://github.com/ccruxx" target="_blank"><i class="fab fa-github"></i></a>
-  <a href="mailto:you@example.com"><i class="fas fa-envelope"></i></a>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <div class="social">
+    <a href="https://github.com/ccruxx" target="_blank" aria-label="GitHub">GitHub</a>
+    <a href="mailto:darrell.a.greenfield.jr@gmail.com" aria-label="Email">Email</a>
+    <a href="https://www.linkedin.com/in/darrell-greenfield-b1682519/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+  </div>
 </section>
 
-<div class="footer">
-  © 2025 Darrell Greenfield — Built with AI, deployed on Vercel
-</div>
+<footer>
+  © 2025 Darrell Greenfield &nbsp;·&nbsp; Powered by AI &nbsp;·&nbsp; Deployed on Vercel
+</footer>
 
 </body>
 </html>
