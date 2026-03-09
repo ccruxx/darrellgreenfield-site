@@ -116,11 +116,12 @@
     }
     .nav-logo {
       font-family: var(--mono);
-      font-size: 0.82rem;
+      font-size: 0.75rem;
       font-weight: 700;
       color: var(--text);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .nav-logo em { color: var(--accent); font-style: normal; }
 
@@ -762,10 +763,16 @@
         --pad-x: 22px;
         --pad-sec: 72px;
       }
-      nav { padding: 16px var(--pad-x); }
+      nav { padding: 14px var(--pad-x); gap: 12px; }
+      .nav-logo { font-size: 0.65rem; letter-spacing: 0.05em; }
+      .btn { padding: 9px 16px; font-size: 0.72rem; }
       #hero { padding: 110px var(--pad-x) 70px; }
-      .hero-content { flex-direction: column; align-items: flex-start; gap: 40px; }
-      .hero-photo-wrap { display: none; }
+      .hero-content { flex-direction: column-reverse; align-items: flex-start; gap: 28px; }
+      .hero-photo-wrap { display: block; }
+      .hero-photo {
+        width: 140px;
+        height: 160px;
+      }
       .cards-grid { grid-template-columns: 1fr; }
       .edge-grid { grid-template-columns: 1fr; }
       .engage-grid { grid-template-columns: 1fr; }
