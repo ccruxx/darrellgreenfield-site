@@ -142,7 +142,50 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 780px;
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+      max-width: 640px;
+    }
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.6s ease forwards;
+    }
+    .hero-photo {
+      width: 300px;
+      height: 340px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(18%) contrast(1.05);
+    }
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(10,10,10,0.7) 100%
+      );
+      pointer-events: none;
+    }
+    .hero-photo-accent {
+      position: absolute;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+      height: 2px;
+      background: var(--accent);
     }
     .hero-eyebrow {
       font-family: var(--mono);
@@ -735,6 +778,8 @@
       }
       nav { padding: 16px var(--pad-x); }
       #hero { padding: 110px var(--pad-x) 70px; }
+      .hero-content { flex-direction: column; align-items: flex-start; gap: 40px; }
+      .hero-photo-wrap { display: none; }
       .cards-grid { grid-template-columns: 1fr; }
       .edge-grid { grid-template-columns: 1fr; }
       .engage-grid { grid-template-columns: 1fr; }
@@ -764,21 +809,28 @@
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
     <div class="hero-content">
-      <div class="hero-eyebrow">Available for equity roles &amp; select engagements</div>
+      <div class="hero-text">
+        <div class="hero-eyebrow">Available for equity roles &amp; select engagements</div>
 
-      <h1 class="hero-name">Darrell<br>Greenfield<em>.</em></h1>
+        <h1 class="hero-name">Darrell<br>Greenfield<em>.</em></h1>
 
-      <div class="hero-role">
-        Technical Co-Founder<span class="sep">/</span>AI Systems Builder<span class="cursor" aria-hidden="true"></span>
+        <div class="hero-role">
+          Technical Co-Founder<span class="sep">/</span>AI Systems Builder<span class="cursor" aria-hidden="true"></span>
+        </div>
+
+        <p class="hero-sub">
+          I build what others scope out. <strong>14 years across infrastructure, cloud, automation, and software</strong> — now focused on building AI-native products and systems that generate real business outcomes.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-filled">Let's Build →</a>
+          <a href="#build" class="btn">See What I Build</a>
+        </div>
       </div>
 
-      <p class="hero-sub">
-        I build what others scope out. <strong>14 years across infrastructure, cloud, automation, and software</strong> — now focused on building AI-native products and systems that generate real business outcomes.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-filled">Let's Build →</a>
-        <a href="#build" class="btn">See What I Build</a>
+      <div class="hero-photo-wrap">
+        <img src="avatar.png" alt="Darrell Greenfield" class="hero-photo">
+        <div class="hero-photo-accent"></div>
       </div>
     </div>
   </section>
