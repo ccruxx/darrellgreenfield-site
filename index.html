@@ -167,26 +167,12 @@
       object-position: center top;
       display: block;
       filter: grayscale(18%) contrast(1.05);
+      /* blend dark edges into background */
+      mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 55%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 55%, transparent 100%);
     }
-    .hero-photo-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent 60%,
-        rgba(10,10,10,0.7) 100%
-      );
-      pointer-events: none;
-    }
-    .hero-photo-accent {
-      position: absolute;
-      bottom: -1px;
-      left: -1px;
-      right: -1px;
-      height: 2px;
-      background: var(--accent);
-    }
+    .hero-photo-wrap::after { display: none; }
+    .hero-photo-accent { display: none; }
     .hero-eyebrow {
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -800,7 +786,7 @@
 
   <!-- ══════════════════ NAV ══════════════════ -->
   <nav id="nav">
-    <div class="nav-logo">Darrell<em>.</em>dev</div>
+    <div class="nav-logo">DarrellGreenfield<em>.</em>dev</div>
     <a href="#contact" class="btn">Let's Build →</a>
   </nav>
 
